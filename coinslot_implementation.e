@@ -36,7 +36,8 @@ feature	-- Inherited
 		time_monotonicity:		last_coin > old last_coin
 		counter_monotonicity:	coins_count = old coins_count + 1
 		opt6:					(coins_count > turnstile.barrier.pushes_count) implies
-									not turnstile.is_locked
+									not (turnstile.is_locked and
+									(turnstile.last_unlock - last_coin) < 250)
 	end
 
 feature	-- Extended

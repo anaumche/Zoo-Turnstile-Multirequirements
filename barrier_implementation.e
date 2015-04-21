@@ -38,7 +38,8 @@ feature	-- Inherited
 		time_monotonicity:		last_push > old last_push
 		counter_monotonicity:	pushes_count = old pushes_count + 1
 		opt7:					pushes_count = turnstile.coinslot.coins_count implies
-													turnstile.is_locked
+									(turnstile.is_locked and
+									(turnstile.last_lock - last_push) < 760)
 	end
 
 feature	-- Extended

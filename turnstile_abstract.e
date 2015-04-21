@@ -52,9 +52,5 @@ invariant
 	consistency:	coinslot.turnstile = Current
 	consistency:	barrier.turnstile = Current
 	opt1a:			barrier.pushes.count <= coinslot.coins.count
-	opt6:			unlocks.last > coinslot.coins.last implies
-						(unlocks.last - coinslot.coins.last) < 250
-	opt7:			locks.last > barrier.pushes.last implies
-						(locks.last - barrier.pushes.last) < 760
 end
 

@@ -25,7 +25,8 @@ feature
 
 		opt7:				((old turnstile.unlocks.last > old turnstile.locks.last) and
 							(pushes.count = turnstile.coinslot.coins.count)) implies
-								turnstile.locks.last > pushes.last
+								(turnstile.locks.last > pushes.last and
+								(turnstile.locks.last - pushes.last) < 760)
 	end
 
 	pushes: MML_SEQUENCE[INTEGER_64]

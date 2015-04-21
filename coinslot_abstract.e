@@ -20,7 +20,8 @@ feature
 		time_monotonicity:	coins.last > old coins.last
 
 		opt6: 				((old turnstile.locks.last > old turnstile.unlocks.last) and (coins.count > turnstile.barrier.pushes.count)) implies
-								turnstile.unlocks.last > coins.last
+								(turnstile.unlocks.last > coins.last and
+								(turnstile.unlocks.last - coins.last) < 250)
 	end
 
 	coins: MML_SEQUENCE[INTEGER_64]

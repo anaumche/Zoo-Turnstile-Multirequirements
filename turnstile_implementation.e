@@ -89,6 +89,4 @@ invariant
 	linking_invariant:	unlocks.last = last_unlock
 	linking_invariant:	is_locked = (locks.last > unlocks.last)
 	opt1a:				barrier.pushes_count <= coinslot.coins_count
-	opt6:				last_unlock > coinslot.last_coin implies (last_unlock - coinslot.last_coin) < 250
-	opt7:				last_lock > barrier.last_push implies (last_lock - barrier.last_push) < 760
 end
